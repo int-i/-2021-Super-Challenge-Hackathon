@@ -3,6 +3,11 @@ body {
     padding: 0;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
 .nav_bar {
     width: 70%;
     height: 60px;
@@ -140,32 +145,51 @@ body {
     background-color: #ddd;
 }
 
-.right_dropdown {
+.dropdown5 {
     width: 138px;
     z-index: 1;
     position: absolute;
     background-color: white;
     top: 60px;
-    right: 180px;
     display: none;
-    text-align: center;
 }
 
-.right_dropdown a {
+.dropdown5 a {
     padding: 17px 55px;
     line-height: 50px;
     text-decoration: none;
     color: black;
-    font-size: 13.3333px;
-    font-weight: normal;
-    justify-content: center;
 }
 
-.nav_right:hover .right_dropdown {
+.dd5:hover .dropdown5 {
     display: block;
 }
 
-.right_dropdown a:hover {
+.dropdown5 a:hover {
+    background-color: #ddd;
+}
+
+.dropdown6 {
+    width: 138px;
+    z-index: 1;
+    position: absolute;
+    background-color: white;
+    top: 60px;
+    display: none;
+}
+
+.dropdown6 a {
+    padding: 17px 55px;
+    line-height: 50px;
+    text-decoration: none;
+    color: black;
+}
+
+.dd6:hover .dropdown6 {
+    display: block;
+}
+
+.dropdown6 a:hover {
     background-color: #ddd;
 }
 
@@ -174,22 +198,54 @@ body {
     height: 360px;
 }
 
+.circle1 {
+    font-size: 12px;
+    position: absolute;
+    z-index: 200000;
+    left: 48%;
+    top: 400px;
+    color: white;
+}
+
+.circle2 {
+    font-size: 12px;
+    position: absolute;
+    z-index: 200000;
+    left: 50%;
+    top: 400px;
+    color: black;
+}
+
+.circle3 {
+    font-size: 12px;
+    position: absolute;
+    z-index: 200000;
+    left: 52%;
+    top: 400px;
+    color: black;
+}
+
 #img_slide1 {
     width: 100%;
     height: 360px;
     position: absolute;
+    transition: 0.2s;
 }
 
 #img_slide2 {
     width: 100%;
     height: 360px;
     position: absolute;
+    right: -100%;
+    transition: 0.2s;
 }
 
 #img_slide3 {
     width: 100%;
     height: 360px;
     position: absolute;
+    right: -200%;
+    transition: 0.2s;
 }
 
 .img_slide_left {
@@ -374,6 +430,7 @@ main {
 #footer_logo {
     border-bottom: 2px solid #e4e4e4;
     display: flex;
+    margin-bottom: 25px;
 }
 
 #school_logo {
@@ -389,4 +446,15 @@ main {
 
 .rise_sns {
     font-size: 12px;
+}
+
+.fa-facebook, .fa-instagram {
+    font-size: 40px;
+    color: black;
+    position: absolute;
+    right: 9px;
+}
+
+.fa-instagram {
+    right: 60px;
 }
