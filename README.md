@@ -8,7 +8,8 @@
 ![image](https://user-images.githubusercontent.com/53253189/104988648-fd1d1f00-5a5b-11eb-8ece-30ecb68cc9bd.png)
 4. src/main/java/inti/SAhomepage/SaHomepageApplication.java 의 main 함수를 실행
 5. localhost:8080 접속
----
+
+
 
 ## mysql 연동방법
 1. resource/application.properties 파일에서 user와 password에 각자 mysql 서버에 맞는 유저와 비밀번호를 적는다.
