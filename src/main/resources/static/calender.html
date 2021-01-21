@@ -3,22 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RICE main page</title>
-    <link rel="stylesheet" href="style.css">
+    <title>RICE dd_menu1 page</title>
+    <link rel="stylesheet" href="calender.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://kit.fontawesome.com/ef3a94ef2b.js" crossorigin="anonymous"></script>
-    <script src="indexUI.js"></script>
     <script src="reactive.js" defer></script>
 </head>
 <body>
     <nav class="nav_bar">
-        <!-- 로고 -->
         <div class="nav_left">
             <a href="index.html"><img src="./imgs/RICE_LOGO.png" class="logo"></a>
             <a href="index.html"><div class="logo_word">INHA RICE</div></a>
         </div>
-        <!-- 메뉴 -->
         <div class="nav_right">
             <a href="reservation_page.html"><button class="nav_menu dd1">예약</button></a>
             <a href="demerit/view"><button class="nav_menu dd2">벌점 개별조회</button></a>
@@ -30,41 +26,10 @@
         <a href="#" class="navbar__toggleBtn">
             <i class="fas fa-bars"></i>
         </a>
-        <div></div>
     </nav>
-    <div class="img_slide">
-        <i class="fas fa-circle circle1"></i>
-        <i class="fas fa-circle circle2"></i>
-        <i class="fas fa-circle circle3"></i>
-        <img src="./imgs/img_slide1.jpg" id="img_slide1">
-        <img src="./imgs/img_slide2.jpg" id="img_slide2">
-        <img src="./imgs/img_slide3.jpg" id="img_slide3">
-        <div class="img_slide_left"><i class="fas fa-chevron-left"></i></div>
-        <div class="img_slide_right"><i class="fas fa-chevron-right"></i></div>
-    </div>
     <main>
         <div class="boxspace">
-            <div class="fbox">
-                <div class="fbox1"></div>
-                <div class="fbox2"></div>
-            </div>
-            <div class="sbox">
-                <div class="sbox1"></div>
-                <div class="sbox2"></div>
-                <div class="sbox3"></div>
-            </div>
-            <div class="tbox">
-                <div class="tfbox">
-                    <div class="tfbox1"></div>
-                    <div class="tfbox2"></div>
-                    <div class="tfbox3"></div>
-                </div>
-                <div class="tsbox">
-                    <div class="tsbox1"></div>
-                    <div class="tsbox2"></div>
-                    <div class="tsbox3"></div>
-                </div>
-            </div>
+            <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FSeoul&amp;src=aW5oYWljZTIwMjBAZ21haWwuY29t&amp;src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;src=a28uc291dGhfa29yZWEjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;color=%23039BE5&amp;color=%2333B679&amp;color=%230B8043"style="border:solid 1px #777"width="800"height="600"frameborder="0"scrolling="no"></iframe>
         </div>
         <div class="emptyspace"></div>
     </main>
