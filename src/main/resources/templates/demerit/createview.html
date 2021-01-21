@@ -1,14 +1,65 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.ong">
+<html lang="en" xmlns:th="http://www.thymeleaf.ong">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>벌점 조회</title>
+    <link href="../static/css/createview.css" th:href="@{/css/createview.css}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <script src="/src/main/resources/static/reactive.js" defer></script>
+</head>
 <body>
-<div class="demerit">
-    <form action="/demerit/view" method="post">
-        <div class="from-group">
-            <label for="id">학번</label>
-            <input type="number" id="id" name="id" placeholder="학번을 입력해주세요">
+    <nav class="nav_bar">
+        <div class="nav_left">
+            <a href="../../index.html"><img th:src="@{../../imgs/RICE_LOGO.png}" class="logo"></a>
+            <a href="../../index.html"><div class="logo_word">INHA RICE</div></a>
         </div>
-        <button type="submit">조회</button>
-    </form>
-</div>
+        <div class="nav_right">
+            <a href="../../reservation_page.html"><button class="nav_menu dd1">예약</button></a>
+            <a href="../../demerit/view"><button class="nav_menu dd2">벌점 개별조회</button></a>
+            <a href="demerit/all"><button class="nav_menu dd3">벌점 관리</button></a>
+            <a href="../../calender.html"><button class="nav_menu dd4">캘린더</button></a>
+            <a href="../../rental.html"><button class="nav_menu dd5">대여</button></a>
+            <button class="nav_menu dd6">메뉴</button>
+        </div>
+        <a href="#" class="navbar__toggleBtn">
+            <i class="fas fa-bars"></i>
+        </a>
+        <div></div>
+    </nav>
+    <main>
+        <div class="boxspace">
+            <div id="search">벌점조회</div>
+            <div class="demerit">
+                <form action="/demerit/view" method="post">
+                    <div class="from-group">
+                        <label for="id"></label>
+                        <input type="number" id="id" name="id" placeholder="학번을 입력해주세요">
+                    </div>
+                    <button id="button" type="submit">조회</button>
+                </form>
+            </div>
+        </div>
+        <div class="emptyspace"></div>
+    </main>
+    <footer>
+        <div class="footer1">
+            <div id="footer_logo">
+                <a href="https://www.inha.ac.kr/"><img src="../../imgs/Inha_university.jpg" id="school_logo"></a>
+                <a href="http://ice.inha.ac.kr/"><p class="student_council">인하대학교 정보통신공학과</p></a>
+            </div>
+            <div class="footer_text">
+                <p class="rice_sns">
+                    <a href="https://ice.inha.ac.kr/ice/2231/subview.do">
+                        <b>위치</b>: 인하대학교 하이테크관 416호  | <b>전화</b>: 032-860-7430~1
+                    </a>
+                    <li class = "icons">    
+                        <a href="https://www.facebook.com/inhaicesa" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/inhaice_rice/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </li>
+                </p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
