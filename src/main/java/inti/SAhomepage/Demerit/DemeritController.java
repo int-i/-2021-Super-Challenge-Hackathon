@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
+import java.util.Optional;
+
 @Controller
 public class DemeritController {
     private final DemeritService demeritService;
@@ -22,8 +24,10 @@ public class DemeritController {
     @PostMapping("demerit/view")
     public String list(DemeritForm form,Model model){
         List<Demerit> demerits = demeritService.findDemeritsbyid(form.getId());
-
+        Optional<Float> sum=demeritService.Demeritsum(form.getId());
         model.addAttribute("demerits",demerits);
+        model.addAttribute("id",form.getId());
+        model.addAttribute("sum",sum.get());
         return "demerit/demeritView";
     }
 

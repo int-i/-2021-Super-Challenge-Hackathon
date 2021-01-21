@@ -10,10 +10,12 @@
             </tr>
             </thead>
             <tbody>
+            <p th:text="${id}+'학우의 총벌점은 '+ ${sum}+'입니다.'"></p>
             <tr th:each="demerit : ${demerits}">
-                <td th:text="${demerit.value}"></td>
-                <td th:text="${demerit.reason}"></td>
-            </tr>
+                     <td th:text="'부여된 벌점:'+${demerit.value}"></td>
+                     <td th:text=" '벌점 사유:'+${demerit.reason}"></td>
+                </tr>
+
             </tbody>
         </table>
     </div>

@@ -76,6 +76,30 @@ public class MemoryDemeritRepository implements DemeritRepository{
     }
 
     @Override
+    public Optional<Float> sumByid(int id) {
+        String sql="select sum(value) from demerit where id=?";
+        Connection conn =null;
+        PreparedStatement pst = null;
+        ResultSet rs=null;
+        try{
+            conn=getConnection();
+            pst=conn.prepareStatement(sql);
+            pst.setLong(1, id);
+            rs=pst.executeQuery();
+            if(rs.next()){
+
+                Float sum=rs.getFloat(1);
+                return Optional.of(sum);
+            }else{
+                return Optional.empty();
+            }
+        }catch (Exception e){
+            throw new IllegalStateException(e);
+        }finally {
+            close(conn,pst,rs);
+        }
+    }
+    @Override
     public List<Demerit> findByid(int id) {
         String sql="select * from demerit where id=?";
         Connection conn =null;
