@@ -76,6 +76,56 @@ public class MemoryDemeritRepository implements DemeritRepository{
     }
 
     @Override
+    public void update(Demerit demerit){
+        String sql="update demerit set value=?,reason=? where num=?";
+        Connection conn =null;
+        PreparedStatement pst = null;
+        ResultSet rs=null;
+        int count=0;
+        try{
+            conn=getConnection();
+            pst=conn.prepareStatement(sql);
+            pst.setFloat(1, demerit.getValue());
+            pst.setString(2, demerit.getReason());
+            pst.setInt(3, demerit.getNum());
+            count=pst.executeUpdate();
+
+            if(count!=0){
+            }else{
+                throw new SQLException("error 발생");
+            }
+        }catch (Exception e){
+            throw new IllegalStateException(e);
+        }finally {
+            close(conn,pst,rs);
+        }
+    }
+
+    @Override
+    public void delete(Demerit demerit){
+        String sql="delete from demerit where num=?";
+        Connection conn =null;
+        PreparedStatement pst = null;
+        ResultSet rs=null;
+        int count=0;
+        try{
+            conn=getConnection();
+            pst=conn.prepareStatement(sql);
+            pst.setInt(1, demerit.getNum());
+            count=pst.executeUpdate();
+
+            if(count!=0){
+            }else{
+                throw new SQLException("error 발생");
+            }
+        }catch (Exception e){
+            throw new IllegalStateException(e);
+        }finally {
+            close(conn,pst,rs);
+        }
+    }
+
+    @Override
     public Optional<Float> sumByid(int id) {
         String sql="select sum(value) from demerit where id=?";
         Connection conn =null;
@@ -84,10 +134,9 @@ public class MemoryDemeritRepository implements DemeritRepository{
         try{
             conn=getConnection();
             pst=conn.prepareStatement(sql);
-            pst.setLong(1, id);
+            pst.setInt(1, id);
             rs=pst.executeQuery();
             if(rs.next()){
-
                 Float sum=rs.getFloat(1);
                 return Optional.of(sum);
             }else{
