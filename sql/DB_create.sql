@@ -138,3 +138,5 @@ flush privileges;
 
 SET GLOBAL time_zone = '+9:00';
 SET time_zone = '+9:00';
+
+ALTER TABLE demerit MODIFY num int AUTO_INCREMENT;
