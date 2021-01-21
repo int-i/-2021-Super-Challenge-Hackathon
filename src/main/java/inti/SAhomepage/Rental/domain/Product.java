@@ -6,8 +6,8 @@ public class Product {
     private int product_num;
     private int state;
     private String image_path;
-    private String Checker;
-    private Boolean isReserve;
+    private String checker;
+    private String reserver;
 
 
     public int getProduct_id() {
@@ -51,18 +51,18 @@ public class Product {
     }
 
     public String getChecker() {
-        return Checker;
+        return checker;
     }
 
     public void setChecker(String checker) {
-        Checker = checker;
+        this.checker = checker;
     }
 
-    public Boolean getReserve() {
-        return isReserve;
+    public String getReserver() {
+        return reserver;
     }
 
-    public void setReserve(Boolean reserve) {
-        isReserve = reserve;
+    public void setReserver(String reserver) {
+        this.reserver = reserver;
     }
 }

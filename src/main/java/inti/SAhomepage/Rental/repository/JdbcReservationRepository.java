@@ -48,6 +48,12 @@ public class JdbcReservationRepository implements ReservationRepository {
     }
 
     @Override
+    public String findReserver(int payer_id) {
+        String sql = "SELECT name FROM payer WHERE id = ?";
+        return jdbcTemplate.queryForObject(sql, new Object[]{payer_id}, String.class);
+    }
+
+    @Override
     public List<Reservation> findAll() {
         String sql = "SELECT * FROM reservation";
         return jdbcTemplate.query(sql, reservationRowMapper());

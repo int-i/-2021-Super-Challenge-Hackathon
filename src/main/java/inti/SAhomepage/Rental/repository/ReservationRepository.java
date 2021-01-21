@@ -15,5 +15,7 @@ public interface ReservationRepository {
 
     Optional<Reservation> findByPayerId(int payer_id);
 
-    List<Reservation> findAll();
+    String findReserver(int product_id);
+
+    List<Reservation>findAll();
 }

@@ -6,8 +6,6 @@ import inti.SAhomepage.Rental.domain.Reservation;
 import inti.SAhomepage.Rental.repository.ProductRepository;
 import inti.SAhomepage.Rental.repository.RentalRepository;
 import inti.SAhomepage.Rental.repository.ReservationRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
@@ -24,7 +22,6 @@ public class RentalService {
         this.productRepository = productRepository;
         this.reservationRepository = reservationRepository;
     }
-
 
     public void addProduct(Product product) {
         validateDuplicateProduct(product);
@@ -45,10 +42,10 @@ public class RentalService {
             reservationRepository.findByProductId(p.getProduct_id())
                     .ifPresentOrElse(
                             (r) -> {
-                                p.setReserve(true);
+                                p.setReserver(reservationRepository.findReserver(r.getPayer_id()));
                             },
                             () -> {
-                                p.setReserve(false);
+                                p.setReserver(null);
                             });
             rentalRepository.findByProduct(p.getProduct_id())
                     .ifPresentOrElse(
@@ -80,9 +77,6 @@ public class RentalService {
         productRepository.updateState(product_id, 0);
     }
 
-    public String findChecker(int product_id) {
-        return rentalRepository.findByProduct(product_id).get().getChecker();
-    }
 
     public List<Rental> findRentals() {
         return rentalRepository.findAll();
