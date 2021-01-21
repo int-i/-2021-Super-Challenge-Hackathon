@@ -88,10 +88,8 @@ public class MemoryDemeritRepository implements DemeritRepository{
             pst.setInt(1, id);
             rs=pst.executeQuery();
             List<Demerit> demerits=new ArrayList<>();
-            if(rs.next()){
+            while(rs.next()){
                 Demerit demerit=new Demerit();
-                demerit.setNum(rs.getInt("num"));
-                demerit.setId(rs.getInt("id"));
                 demerit.setValue(rs.getFloat("value"));
                 demerit.setReason(rs.getString("reason"));
                 demerits.add(demerit);

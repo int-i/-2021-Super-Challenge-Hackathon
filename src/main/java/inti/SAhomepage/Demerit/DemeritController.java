@@ -22,6 +22,7 @@ public class DemeritController {
     @PostMapping("demerit/view")
     public String list(DemeritForm form,Model model){
         List<Demerit> demerits = demeritService.findDemeritsbyid(form.getId());
+
         model.addAttribute("demerits",demerits);
         return "demerit/demeritView";
     }
