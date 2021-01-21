@@ -64,10 +64,10 @@ public class BoardController {
             String filePath = savePath + "\\" + filename;
             files.transferTo(new java.io.File(filePath));
 
-            FileDto fileDto = new FileDto();
-            fileDto.setOrigFilename(origFilename);
-            fileDto.setFilename(filename);
-            fileDto.setFilePath(filePath);
+            FileDto fileDto = new FileDto
+                    .Builder((long)0, origFilename, filename, filePath)
+                    .build();
+
 
             Long fileId = fileService.saveFile(fileDto);
             boardDto.setFileId(fileId);

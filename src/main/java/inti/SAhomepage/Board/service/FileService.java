@@ -24,11 +24,12 @@ public class FileService {
     public FileDto getFile(Long id) {
         File file = fileRepository.findById(id).get();
 
-        FileDto fileDto = FileDto.builder()
-                .id(id)
-                .origFilename(file.getOrigFilename())
-                .filename(file.getFilename())
-                .filePath(file.getFilePath())
+        FileDto fileDto = new FileDto
+                .Builder(id, file.getOrigFilename(), file.getFilename(), file.getFilePath())
+//                .id(id)
+//                .origFilename(file.getOrigFilename())
+//                .filename(file.getFilename())
+//                .filePath(file.getFilePath())
                 .build();
         return fileDto;
     }

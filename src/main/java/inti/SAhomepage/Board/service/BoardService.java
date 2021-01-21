@@ -28,14 +28,11 @@ public class BoardService {
         List<BoardDto> boardDtoList = new ArrayList<>();
 
         for(Board board : boardList){
-            BoardDto boardDto = BoardDto.builder()
-                    .id(board.getId())
-                    .author(board.getAuthor())
-                    .title(board.getTitle())
-                    .content(board.getContent())
-                    .createdDate(board.getCreatedDate())
+            BoardDto boardDto = new BoardDto
+                    .Builder(board.getId(), board.getAuthor(), board.getTitle(), board.getContent(), board.getFileId(), board.getCreatedDate(), board.getModifiedDate())
                     .build();
             boardDtoList.add(boardDto);
+
         }
         return boardDtoList;
     }
@@ -44,13 +41,8 @@ public class BoardService {
     public BoardDto getPost(Long id){
         Board board = boardRepository.findById(id).get();
 
-        BoardDto boardDto = BoardDto.builder()
-                .id(board.getId())
-                .author(board.getAuthor())
-                .title(board.getTitle())
-                .content(board.getContent())
-                .fileId(board.getFileId())
-                .createdDate(board.getCreatedDate())
+        BoardDto boardDto = new BoardDto
+                .Builder(board.getId(), board.getAuthor(), board.getTitle(), board.getContent(), board.getFileId(), board.getCreatedDate(), board.getModifiedDate())
                 .build();
         return boardDto;
     }
