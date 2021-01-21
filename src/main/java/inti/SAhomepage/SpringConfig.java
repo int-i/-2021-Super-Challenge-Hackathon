@@ -1,9 +1,6 @@
 package inti.SAhomepage;
 
-import inti.SAhomepage.Demerit.Demerit;
-import inti.SAhomepage.Demerit.DemeritRepository;
-import inti.SAhomepage.Demerit.DemeritService;
-import inti.SAhomepage.Demerit.MemoryDemeritRepository;
+import inti.SAhomepage.Demerit.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -26,7 +23,16 @@ public class SpringConfig {
     }
 
     @Bean
+    public AdministratorService administratorService(){
+        return new AdministratorService(administratorRepository());
+    }
+
+    @Bean
     public DemeritRepository demeritRepository(){
         return new MemoryDemeritRepository(dataSource);
+    }
+    @Bean
+    public AdministratorRepository administratorRepository(){
+        return new MemoryAdministratorRepository(dataSource);
     }
 }

@@ -11,6 +11,15 @@ public class DemeritService {
     public DemeritService(DemeritRepository demeritRepository) {
         this.demeritRepository = demeritRepository;
     }
+    public void Demerit(Demerit demerit){
+        demeritRepository.save(demerit);
+    }
+    public void update(Demerit demerit){
+        demeritRepository.update(demerit);
+    }
+    public void delete(Demerit demerit){
+        demeritRepository.delete(demerit);
+    }
     public Optional<Float> Demeritsum(int id){
         return demeritRepository.sumByid(id);
     }
