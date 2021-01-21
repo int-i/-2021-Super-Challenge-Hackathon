@@ -14,7 +14,7 @@ a {
 
 .nav_bar {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
@@ -70,107 +70,14 @@ main {
     align-items: center;
 }
 
-.rentalspace {
-    display: flex;
-    width: 70%;
-}
-
 .boxspace {
     margin-top: 20px;
-    display: flex;
-    align-items: center;
-    height: 500px;
+    height: 700px;
     width: 70%;
     background-color: white;
-    width: 420px;
-    flex: 2;
-}
-
-.reservation_box {
     display: flex;
-    width: 100%;
-    justify-content: space-evenly;
-    text-align: center;
-}
-
-#photo {
-    width: 200px;
-    height: 300px;
-    background-color: skyblue;
-}
-
-#photo_right {
-    display: flex;
-    flex-direction: column;
-    width: 400px;
-    justify-content: space-evenly;
-}
-/* 여기부터 */
-table{
-    border-collapse: collapse;
-}
-caption{
-    display: none;
-}
-
-.time,.reser_name{
-    padding: 10px;
-    border: solid 1px;
-}
-.board_list {
-    width: 100%;
-    border-top: 2px solid navy;
-}
-.board_list tr{
-    /* 카테고리 말고 내용(행 한줄)들 선택 */
-    border-bottom: 1px solid #999;
-}
-.board_list th,
-.board_list td {
-    /* 표 전체 선택 */
-    padding: 3px;
-    /* font-size: 0; */
-}
-.board_list td {
-    /* 변수들 각각 선택 */
-    text-align: center;
-}
-/* 여기까지 예약자 테이블 속성 */
-
-#input {
-    height: 45px;
-}
-
-#hour {
-    height: 45px;
-}
-
-#minute {
-    height: 45px;
-}
-
-#button {
-    height: 45px;
-}
-
-.rental-list {
-    margin-top: 20px;
-}
-
-#ul {
-    padding-left: 0;
-    border: 1px solid gainsboro;
-    background-color: white;
-    margin-left: 12px;
-    margin-top: 0;
-    border-top: none;
-}
-
-.li {
-    list-style: none;
-    padding: 8px 0;
-    text-align: center;
-    border-top: 1px solid gainsboro;
+    justify-content: center;
+    align-items: center;
 }
 
 .emptyspace {
@@ -230,8 +137,6 @@ caption{
 .icons{
     list-style: none;
 }
-
-
 
 @media screen and (max-width: 1050px){
     .nav_bar {

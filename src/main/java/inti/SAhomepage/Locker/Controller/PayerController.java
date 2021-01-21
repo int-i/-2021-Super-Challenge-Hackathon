@@ -1,0 +1,16 @@
+package inti.SAhomepage.Locker.Controller;
+
+import inti.SAhomepage.Locker.Service.PayerService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class PayerController {
+
+    private final PayerService payerService;
+
+    @Autowired
+    public PayerController(PayerService payerService) {
+        this.payerService = payerService;
+    }
+}
