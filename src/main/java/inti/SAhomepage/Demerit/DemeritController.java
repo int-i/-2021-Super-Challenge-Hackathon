@@ -12,10 +12,13 @@ import java.util.Optional;
 @Controller
 public class DemeritController {
     private final DemeritService demeritService;
+    private final AdministratorService administratorService;
+
 
     @Autowired
-    public DemeritController(DemeritService demeritService) {
+    public DemeritController(DemeritService demeritService, AdministratorService administratorService) {
         this.demeritService = demeritService;
+        this.administratorService = administratorService;
     }
     @GetMapping ("demerit/view")
     public String createForm(){
@@ -30,11 +33,47 @@ public class DemeritController {
         model.addAttribute("sum",sum.get());
         return "demerit/demeritView";
     }
-
-    @GetMapping("demerit/all")
+    @PostMapping("demerit/insert")
+    public String manager_insert(Demerit form,Model model){
+        demeritService.Demerit(form);
+        List<Demerit> demerits = demeritService.findDemerits();
+        model.addAttribute("demerits",demerits);
+        return "demerit/demeritList";
+    }
+    @PostMapping("demerit/update")
+    public String manager_update(Demerit form,Model model){
+        demeritService.update(form);
+        List<Demerit> demerits = demeritService.findDemerits();
+        model.addAttribute("demerits",demerits);
+        return "demerit/demeritList";
+    }
+    @PostMapping("demerit/delete")
+    public String manager_delete(Demerit form,Model model){
+        demeritService.delete(form);
+        List<Demerit> demerits = demeritService.findDemerits();
+        model.addAttribute("demerits",demerits);
+        return "demerit/demeritList";
+    }
+    @GetMapping("demerit/manager")
     public String all_list(Model model){
         List<Demerit> demerits = demeritService.findDemerits();
         model.addAttribute("demerits",demerits);
         return "demerit/demeritList";
+    }
+
+    @GetMapping ("demerit/check")
+    public String checkForm(){
+        return "demerit/check";
+    }
+
+    @PostMapping("demerit/checking")
+    public String check(Administrator administrator,Model model){
+        Optional<Integer> res=administratorService.check(administrator);
+        if(res.get()==0)return "/demerit/check";
+        else {
+            List<Demerit> demerits = demeritService.findDemerits();
+            model.addAttribute("demerits",demerits);
+            return "demerit/demeritList";
+            }
     }
 }
