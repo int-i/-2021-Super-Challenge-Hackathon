@@ -1,0 +1,197 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav_bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav_left {
+    display: flex;
+    align-items: center;
+}
+
+.nav_right {
+    display: flex;
+    list-style: none;
+}
+
+.fas {
+    font-size: 20px;
+}
+
+.logo {
+    width: 45px;
+}
+
+.logo_word {
+    font-size: 27px;
+    font-weight: bold;
+    color: gray;
+    padding-left: 7px;
+}
+
+.nav_menu {
+    min-width: 138px;
+    text-align: center;
+    border: none;
+    padding: 21px 0;
+    background-color: white;
+}
+.nav_menu:hover {
+    border-radius: 4px;
+    background-color: skyblue;
+}
+
+.navbar__toggleBtn{
+    display: none;
+    position: absolute;
+    right: 32px;
+    font-size: 24px;
+}
+
+main {
+    width: 100%;
+    background-color: rgb(241, 241, 241);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.boxspace {
+    margin-top: 20px;
+    height: 500px;
+    width: 70%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#form {
+    text-align: center;
+}
+
+.form-group {
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#password {
+    width: 316px;
+    height: 46px;
+    margin: 37px 0;
+}
+
+#button {
+    width: 327px;
+    height: 52px;
+}
+
+.emptyspace {
+    height: 100px;
+    width: 100%;
+    background-color: rgb(241, 241, 241);
+}
+
+.footer1 {
+    height: 150px;
+}
+
+#footer_logo {
+    border-bottom: 2px solid #e4e4e4;
+    display: flex;
+    margin-bottom: 25px;
+}
+
+#school_logo {
+    width: 200px;
+}
+
+.student_council {
+    font-size: 20px;
+    color: #d2d2d2;
+    font-weight: bold;
+    margin-left: 7px;
+}
+
+.rise_sns {
+    font-size: 12px;
+}
+
+.fa-facebook, .fa-instagram {
+    font-size: 40px;
+    color: black;
+    position: absolute;
+    right: 9px;
+}
+
+.fa-instagram {
+    right: 60px;
+}
+
+.navbar__toggleBtn{
+    display: none;
+    position: absolute;
+    right: 32px;
+    font-size: 24px;
+}
+.nav_right.active{
+    display: flex;
+}
+.footer_text{
+    display: flex;
+}
+.icons{
+    list-style: none;
+}
+
+@media screen and (max-width: 1050px){
+    .nav_bar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 24px;
+    }
+    .nav_right{
+        display:none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding-left: 0;
+    }
+    .nav_menu{
+        width: 100%;
+        text-align: center;
+    }
+    .nav_left{
+        /* display:none; */
+        justify-content: center;
+        padding-left: 0;
+        width: 100%;
+    }
+    .dropdown_menu{
+        display: none;
+    }
+    .navbar__toggleBtn{
+        display: block;
+    }
+    .nav_right.active{
+        display: flex;
+    }
+    .icons{
+        display:none;
+    }
+}
