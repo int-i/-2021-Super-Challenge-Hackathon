@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RICE dd_menu1 page</title>
-    <link rel="stylesheet" href="ddmenu.css">
+    <link rel="stylesheet" href="reservation_page.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="reactive.js" defer></script>
@@ -29,7 +29,31 @@
         <div></div>
     </nav>
     <main>
-        <div class="boxspace"></div>
+        <div class="boxspace">
+            <div class="reservation_box">
+                <div id="photo">사진</div>
+                <div id="photo_right">
+                    <div class="borrow">대여물품</div>
+                    <input type="text" name="" id="input" placeholder="학번을 입력해주세요">
+                    <select id="hour">
+                        <option value="9">9시</option>
+                        <option value="10">10시</option>
+                        <option value="11">11시</option>
+                        <option value="12">12시</option>
+                        <option value="14">13시</option>
+                        <option value="15">14시</option>
+                        <option value="16">15시</option>
+                        <option value="17">16시</option>
+                        <option value="18">17시</option>
+                    </select>
+                    <select id="minute">
+                        <option value="0">00분</option>
+                        <option value="30">30분</option>
+                    </select>
+                    <button id="button">예약 버튼</button>
+                </div>
+            </div>
+        </div>
         <div class="emptyspace"></div>
     </main>
     <footer>
