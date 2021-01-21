@@ -70,6 +70,11 @@ main {
     align-items: center;
 }
 
+.rentalspace {
+    display: flex;
+    width: 70%;
+}
+
 .boxspace {
     margin-top: 20px;
     display: flex;
@@ -77,6 +82,8 @@ main {
     height: 500px;
     width: 70%;
     background-color: white;
+    width: 420px;
+    flex: 2;
 }
 
 .reservation_box {
@@ -123,8 +130,6 @@ main {
     border: solid 1px;
 }
 
-
-
 #input {
     height: 45px;
 }
@@ -139,6 +144,26 @@ main {
 
 #button {
     height: 45px;
+}
+
+.rental-list {
+    margin-top: 20px;
+}
+
+#ul {
+    padding-left: 0;
+    border: 1px solid gainsboro;
+    background-color: white;
+    margin-left: 12px;
+    margin-top: 0;
+    border-top: none;
+}
+
+.li {
+    list-style: none;
+    padding: 8px 0;
+    text-align: center;
+    border-top: 1px solid gainsboro;
 }
 
 .emptyspace {
