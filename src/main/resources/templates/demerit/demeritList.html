@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.ong">
 <body>
 <div class="demerit">
@@ -50,4 +50,107 @@
     </form>
 </div>
 </body>
-</html>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RICE dd_menu1 page</title>
+    <link href="../../static/css/demeritList.css" th:href="@{/css/demeritList.css}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../../reactive.js" defer></script>
+</head>
+<body>
+    <nav class="nav_bar">
+        <div class="nav_left">
+            <a href="../../index.html"><img th:src="@{../../imgs/RICE_LOGO.png}" class="logo"></a>
+            <a href="../../index.html"><div class="logo_word">INHA RICE</div></a>
+        </div>
+        <div class="nav_right">
+            <a href="../../reservation_page.html"><button class="nav_menu dd1">예약</button></a>
+            <a href="../../demerit/view"><button class="nav_menu dd2">벌점 개별조회</button></a>
+            <a href="/demerit/check"><button class="nav_menu dd3">벌점 관리</button></a>
+            <a href="../../calender.html"><button class="nav_menu dd4">캘린더</button></a>
+            <a href="../../rental.html"><button class="nav_menu dd5">대여</button></a>
+            <button class="nav_menu dd6">메뉴</button>
+        </div>
+        <a href="#" class="navbar__toggleBtn">
+            <i class="fas fa-bars"></i>
+        </a>
+        <div></div>
+    </nav>
+    <main>
+        <div class="boxspace">
+            <div class="demerit">
+                <div id="under-demerit">
+                    <table id="table">
+                        <thead>
+                        <tr>
+                            <th>벌점 목록 관리 page입니다.</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="demerit : ${demerits}">
+                            <td th:text="'벌점 부여 순서: '+${demerit.num}"></td>
+                            <td th:text="' 벌점 받은 학우: '+${demerit.id}"></td>
+                            <td th:text="' 벌점: '+${demerit.value}"></td>
+                            <td th:text="' 벌점 사유: '+${demerit.reason}"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <form action="./insert" method="post">
+                    <div class="from-insert">
+                        <label for="id">학번</label>
+                        <input type="number" id="id" name="id" placeholder="학번을 입력해주세요">
+                        <label for="value">벌점</label>
+                        <input type="text" id="value" name="value" placeholder="벌점을 입력해주세요">
+                        <label for="reason">사유</label>
+                        <input type="text" id="reason" name="reason" placeholder="벌점사유를 입력해주세요">
+                    </div>
+                    <button type="submit" id="btn1">삽입</button>
+                </form>
+                <form action="./update" method="post">
+                    <div class="from-update">
+                        <label for="num">번호</label>
+                        <input type="number" id="num" name="num" placeholder="수정하려는 번호를 입력해주세요">
+                        벌점
+                        <input type="text" id="value2" name="value" placeholder="벌점을 입력해주세요">
+                        사유
+                        <input type="text" id="reason2" name="reason" placeholder="벌점사유를 입력해주세요">
+                    </div>
+                    <button type="submit" id="btn2">수정</button>
+                </form>
+                <form action="./delete" method="post" id="delete">
+                    <div class="from-delete">
+                        <label for="num3">번호</label>
+                        <input type="number" id="num3" name="num" placeholder="삭제하려는 번호를 입력해주세요">
+                    </div>
+                    <button type="submit" id="btn3">삭제</button>
+                </form>
+            </div>
+        </div>
+        <div class="emptyspace"></div>
+    </main>
+    <footer>
+        <div class="footer1">
+            <div id="footer_logo">
+                <a href="https://www.inha.ac.kr/"><img src="../../imgs/Inha_university.jpg" id="school_logo"></a>
+                <a href="http://ice.inha.ac.kr/"><p class="student_council">인하대학교 정보통신공학과</p></a>
+            </div>
+            <div class="footer_text">
+                <p class="rice_sns">
+                    <a href="https://ice.inha.ac.kr/ice/2231/subview.do">
+                        <b>위치</b>: 인하대학교 하이테크관 416호  | <b>전화</b>: 032-860-7430~1
+                    </a>
+                    <li class = "icons">    
+                        <a href="https://www.facebook.com/inhaicesa" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/inhaice_rice/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </li>
+                </p>
+            </div>
+        </div>
+    </footer>
