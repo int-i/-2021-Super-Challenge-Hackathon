@@ -52,7 +52,7 @@ public class JdbcPayerRepository implements PayerRepository {
 
     @Override
     public List<Payer> findAll() {
-        String sql = "SELECT * FROM Payer where Locker_id!=null";
+        String sql = "SELECT * FROM Payer";
         return jdbcTemplate.query(sql, payerRowMapper());
     }
 
