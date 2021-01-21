@@ -9,13 +9,13 @@
                 <td>
                     <img src="${product.image_path}">
                 </td>
-                <td th:text="${product.product_name}"></td>
+                <td th:text="|${product.product_name}${product.product_num}|"></td>
                 <td>
                     <td>
                         <form th:if="${product.reserver}">
                             <input type="submit" value="예약중" th:title="${product.reserver}" />
                         </form>
-                        <form th:unless="${product.reserver}" action="/products/reserve?product_id=${product.product_id}" method="get">
+                        <form th:unless="${product.reserver}" th:action="|/products/${product.product_id}/reserve|" method="get">
                             <input type="submit" value="예약"/>
                         </form>
                     </td>
@@ -23,7 +23,7 @@
                         <form th:if="${product.checker}">
                             <input type="submit" value="대여중" th:title="${product.checker}"/>
                         </form>
-                        <form th:unless="${product.checker}"action="/products/rent?product_id=${product.product_id}" method="get">
+                        <form th:unless="${product.checker}" th:action="|/products/${product.product_id}/rent|" method="get">
                             <input type="submit" value="대여">
                         </form>
                     </td>
