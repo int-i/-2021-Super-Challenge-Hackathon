@@ -1,32 +1,17 @@
-<!-- <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.ong">
-<body>
-<div class="demerit">
-    <form action="/demerit/view" method="post">
-        <div class="from-group">
-            <label for="id">학번</label>
-            <input type="number" id="id" name="id" placeholder="학번을 입력해주세요">
-        </div>
-        <button type="submit">조회</button>
-    </form>
-</div>
-</body>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.ong">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>벌점 조회</title>
-    <link rel="stylesheet" href="./createview.css">
+    <link href="../static/css/createview.css" th:href="@{/css/createview.css}" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
     <script src="/src/main/resources/static/reactive.js" defer></script>
 </head>
 <body>
     <nav class="nav_bar">
         <div class="nav_left">
-            <a href="index.html"><img src="./imgs/RICE_LOGO.png" class="logo"></a>
+            <a href="index.html"><img th:src="@{imgs/RICE_LOGO.png}" class="logo"></a>
             <a href="index.html"><div class="logo_word">INHA RICE</div></a>
         </div>
         <div class="nav_right">
