@@ -1,4 +1,4 @@
-package inti.SAhomepage;
+package inti.SAhomepage.Rental;
 
 
 import java.sql.Date;
