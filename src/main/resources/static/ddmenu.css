@@ -3,12 +3,18 @@ body {
     padding: 0;
 }
 
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
 .nav_bar {
-    width: 70%;
-    height: 60px;
     display: flex;
-    justify-content: space-between;
-    padding-left: 15%;
+    justify-content: center;
     align-items: center;
 }
 
@@ -18,7 +24,8 @@ body {
 }
 
 .nav_right {
-    padding: 19px 0;
+    display: flex;
+    list-style: none;
 }
 
 .fas {
@@ -36,17 +43,16 @@ body {
     padding-left: 7px;
 }
 
-.logo_word a {
-    text-decoration: none;
-    color: gray;
-}
-
 .nav_menu {
     min-width: 138px;
     text-align: center;
     border: none;
     padding: 21px 0;
     background-color: white;
+}
+.nav_menu:hover {
+    border-radius: 4px;
+    background-color: skyblue;
 }
 
 .dropdown1 {
@@ -70,7 +76,8 @@ body {
 }
 
 .dropdown1 a:hover {
-    background-color: #ddd;
+    border-radius: 4px;
+    background-color: skyblue;
 }
 
 .dropdown2 {
@@ -94,7 +101,8 @@ body {
 }
 
 .dropdown2 a:hover {
-    background-color: #ddd;
+    border-radius: 4px;
+    background-color: skyblue;
 }
 
 .dropdown3 {
@@ -118,7 +126,8 @@ body {
 }
 
 .dropdown3 a:hover {
-    background-color: #ddd;
+    border-radius: 4px;
+    background-color: skyblue;
 }
 
 .dropdown4 {
@@ -142,36 +151,65 @@ body {
 }
 
 .dropdown4 a:hover {
-    background-color: #ddd;
+    border-radius: 4px;
+    background-color: skyblue;
 }
 
-.right_dropdown {
+.dropdown5 {
     width: 138px;
     z-index: 1;
     position: absolute;
     background-color: white;
     top: 60px;
-    right: 180px;
     display: none;
-    text-align: center;
 }
 
-.right_dropdown a {
+.dropdown5 a {
     padding: 17px 55px;
     line-height: 50px;
     text-decoration: none;
     color: black;
-    font-size: 13.3333px;
-    font-weight: normal;
-    justify-content: center;
 }
 
-.nav_right:hover .right_dropdown {
+.dd5:hover .dropdown5 {
     display: block;
 }
 
-.right_dropdown a:hover {
-    background-color: #ddd;
+.dropdown5 a:hover {
+    border-radius: 4px;
+    background-color: skyblue;
+}
+
+.dropdown6 {
+    width: 138px;
+    z-index: 1;
+    position: absolute;
+    background-color: white;
+    top: 60px;
+    display: none;
+}
+
+.dropdown6 a {
+    padding: 17px 55px;
+    line-height: 50px;
+    text-decoration: none;
+    color: black;
+}
+
+.dd6:hover .dropdown6 {
+    display: block;
+}
+
+.dropdown6 a:hover {
+    border-radius: 4px;
+    background-color: skyblue;
+}
+
+.navbar__toggleBtn{
+    display: none;
+    position: absolute;
+    right: 32px;
+    font-size: 24px;
 }
 
 main {
@@ -202,6 +240,7 @@ main {
 #footer_logo {
     border-bottom: 2px solid #e4e4e4;
     display: flex;
+    margin-bottom: 25px;
 }
 
 #school_logo {
@@ -217,4 +256,68 @@ main {
 
 .rise_sns {
     font-size: 12px;
+}
+
+.fa-facebook, .fa-instagram {
+    font-size: 40px;
+    color: black;
+    position: absolute;
+    right: 9px;
+}
+
+.fa-instagram {
+    right: 60px;
+}
+
+.navbar__toggleBtn{
+    display: none;
+    position: absolute;
+    right: 32px;
+    font-size: 24px;
+}
+.nav_right.active{
+    display: flex;
+}
+.footer_text{
+    display: flex;
+}
+.icons{
+    list-style: none;
+}
+
+@media screen and (max-width: 1050px){
+    .nav_bar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 24px;
+    }
+    .nav_right{
+        display:none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding-left: 0;
+    }
+    .nav_menu{
+        width: 100%;
+        text-align: center;
+    }
+    .nav_left{
+        /* display:none; */
+        justify-content: center;
+        padding-left: 0;
+        width: 100%;
+    }
+    .dropdown_menu{
+        display: none;
+    }
+    .navbar__toggleBtn{
+        display: block;
+    }
+    .nav_right.active{
+        display: flex;
+    }
+    .icons{
+        display:none;
+    }
 }

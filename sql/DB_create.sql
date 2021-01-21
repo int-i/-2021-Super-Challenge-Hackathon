@@ -24,6 +24,15 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Administrator` (
 ENGINE = InnoDB;
 
 
+-- Table `mydb`.`Locker`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Locker` (
+  `Locker_id` INT NOT NULL,
+  PRIMARY KEY (`Locker_id`),
+  UNIQUE INDEX `Locker_id_UNIQUE` (`Locker_id` ASC) VISIBLE)
+ENGINE = InnoDB;
+
+
 -- -----------------------------------------------------
 -- Table `mydb`.`Payer`
 -- -----------------------------------------------------
@@ -31,9 +40,16 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Payer` (
   `Id` INT NOT NULL,
   `Name` VARCHAR(45) NOT NULL,
   `Phone` VARCHAR(45) NULL,
+  `Locker_id` INT NOT NULL,
   PRIMARY KEY (`Id`),
   UNIQUE INDEX `Phone_UNIQUE` (`Phone` ASC) VISIBLE,
-  UNIQUE INDEX `Id_UNIQUE` (`Id` ASC) VISIBLE)
+  UNIQUE INDEX `Id_UNIQUE` (`Id` ASC) VISIBLE,
+  INDEX `fk_Payer_Locker1_idx` (`Locker_id` ASC) VISIBLE,
+  CONSTRAINT `fk_Payer_Locker1`
+    FOREIGN KEY (`Locker_id`)
+    REFERENCES `mydb`.`Locker` (`Locker_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
@@ -119,3 +135,14 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+create user 'error'@'%' identified by 'error123!';
+
+grant all privileges on mydb.* to error@'%';
+
+flush privileges;
+
+SET GLOBAL time_zone = '+9:00';
+SET time_zone = '+9:00';
+
+ALTER TABLE demerit MODIFY num int AUTO_INCREMENT;
