@@ -16,9 +16,21 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	implementation 'org.testng:testng:7.1.0'
 	runtimeOnly 'mysql:mysql-connector-java'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+	// mybatis는 특정 sql query들을 Mapping하기 위해 mapper(xml)를 만들어서 사용
+	compile 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.0.1'
+
+	// spring boot에서 jsp를 바로 읽을 수 있도록 해주는 dependency
+	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+	implementation 'javax.servlet:jstl'
+
+	compile group: 'javax.inject', name: 'javax.inject', version: '1'
+
+
 }
 
 

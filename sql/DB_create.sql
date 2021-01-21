@@ -115,6 +115,39 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Demerit` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+CREATE TABLE IF NOT EXISTS `mydb`.`Locker` (
+  `Payer_Id` INT NOT NULL,
+  `Locker_num` INT NOT NULL,
+  PRIMARY KEY (`Payer_Id`),
+  CONSTRAINT `fk_Locker_Payer1`
+    FOREIGN KEY (`Payer_Id`)
+    REFERENCES `mydb`.`Payer` (`Id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+create table tbl_article(
+	article_no INT(11) NOT NULL AUTO_INCREMENT,
+	title VARCHAR(200) NOT NULL,
+	content TEXT,
+	writer VARCHAR(50) NOT NULL,
+	regdate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+	viewcnt INT(11),
+	file_cnt INT(11) DEFAULT 0,
+	PRIMARY KEY (`article_no`)
+);
+
+
+create table tbl_article_file(
+	article_no INT(11) NOT NULL,
+	file_name VARCHAR(150) NOT NULL,
+	id INT(11) NOT NULL AUTO_INCREMENT,
+	original_file_name VARCHAR(150),
+	reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+	PRIMARY KEY(`id`),
+	FOREIGN KEY (`article_no`) REFERENCES tbl_article (`article_no`) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;

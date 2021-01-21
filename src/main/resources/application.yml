@@ -6,3 +6,5 @@ spring:
       ddl-auto: update
     generate-ddl: false
     show-sql: true
+    mybatis:
+      config-location : classpath:mybatis-config.xml
