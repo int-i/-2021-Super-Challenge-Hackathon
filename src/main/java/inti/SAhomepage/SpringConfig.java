@@ -44,6 +44,8 @@ public class SpringConfig {
     @Bean
     public PayerService payerService() {
         return new PayerService(payerRepository(), lockerRepository());
+    }
+    @Bean
     public ProductRepository productRepository() {
         return new JdbcProductRepository(dataSource);
     }
