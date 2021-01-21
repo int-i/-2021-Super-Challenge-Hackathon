@@ -5,11 +5,12 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
 import javax.sql.DataSource;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 import java.util.OptionalInt;
 
-public class JdbcRentalRepository implements RentalRepository{
+public class JdbcRentalRepository implements RentalRepository {
 
     private final JdbcTemplate jdbcTemplate;
 
@@ -19,6 +20,7 @@ public class JdbcRentalRepository implements RentalRepository{
 
     @Override
     public void save(Rental rental) {
+
         String sql = "INSERT INTO rental VALUES (?, ?, now(), ?)";
         jdbcTemplate.update(sql,
                 rental.getProduct_id(),
@@ -38,7 +40,6 @@ public class JdbcRentalRepository implements RentalRepository{
         List<Rental> result = jdbcTemplate.query(sql, rentalRowMapper(), product_id);
         return result.stream().findAny();
     }
-
 
     @Override
     public Optional<Rental> findByPayer(int payer_id) {

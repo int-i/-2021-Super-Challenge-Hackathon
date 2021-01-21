@@ -1,5 +1,10 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script th:if="${pay}" type="text/javascript">
+        alert("과자치비 납부자만 이용하실 수 있습니다.");
+    </script>
+</head>
 <body>
 <div class="container">
     <div>
@@ -7,7 +12,7 @@
             <tbody>
             <tr th:each="product : ${products}">
                 <td>
-                    <img src="${product.image_path}">
+                    <img th:src="${product.image_path}">
                 </td>
                 <td th:text="|${product.product_name}${product.product_num}|"></td>
                 <td>
@@ -20,8 +25,8 @@
                         </form>
                     </td>
                     <td>
-                        <form th:if="${product.checker}">
-                            <input type="submit" value="대여중" th:title="${product.checker}"/>
+                        <form th:if="${product.checker}" th:action="|/products/${product.product_id}/return|" method="get">
+                            <input type="submit" value="반납"  th:title="${product.checker}"/>
                         </form>
                         <form th:unless="${product.checker}" th:action="|/products/${product.product_id}/rent|" method="get">
                             <input type="submit" value="대여">

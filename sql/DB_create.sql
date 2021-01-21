@@ -61,6 +61,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Product` (
   `Product_name` VARCHAR(45) NOT NULL,
   `Product_num` INT NOT NULL,
   `State` INT NOT NULL,
+  'Image_path' VARCHAR(80) NULL,
   PRIMARY KEY (`Product_id`),
   UNIQUE INDEX `Product_id_UNIQUE` (`Product_id` ASC) VISIBLE)
 ENGINE = InnoDB;
@@ -146,3 +147,4 @@ SET GLOBAL time_zone = '+9:00';
 SET time_zone = '+9:00';
 
 ALTER TABLE demerit MODIFY num int AUTO_INCREMENT;
+

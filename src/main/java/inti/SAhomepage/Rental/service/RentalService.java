@@ -1,5 +1,7 @@
 package inti.SAhomepage.Rental.service;
 
+import inti.SAhomepage.Locker.Domain.Payer;
+import inti.SAhomepage.Locker.Repository.PayerRepository;
 import inti.SAhomepage.Rental.domain.Product;
 import inti.SAhomepage.Rental.domain.Rental;
 import inti.SAhomepage.Rental.domain.Reservation;
@@ -14,13 +16,16 @@ public class RentalService {
     private final RentalRepository rentalRepository;
     private final ProductRepository productRepository;
     private final ReservationRepository reservationRepository;
+    private final PayerRepository payerRepository;
 
     public RentalService(ProductRepository productRepository,
                          RentalRepository rentalRepository,
-                         ReservationRepository reservationRepository) {
+                         ReservationRepository reservationRepository,
+                         PayerRepository payerRepository) {
         this.rentalRepository = rentalRepository;
         this.productRepository = productRepository;
         this.reservationRepository = reservationRepository;
+        this.payerRepository = payerRepository;
     }
 
     public void addProduct(Product product) {
@@ -86,7 +91,15 @@ public class RentalService {
         reservationRepository.save(reservation);
     }
 
-    public boolean isReservationExist(int product_id) {
+    public boolean reserved(int product_id) {
         return reservationRepository.findByProductId(product_id).isPresent();
+    }
+
+    public Optional<Reservation> findOneReservation(int product_id) {
+        return reservationRepository.findByProductId(product_id);
+    }
+
+    public boolean paid(int payer_id) {
+        return payerRepository.findByPayer_Id(payer_id).isPresent();
     }
 }
