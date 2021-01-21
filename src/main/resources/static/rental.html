@@ -34,16 +34,21 @@
                 <div id="photo">사진</div>
                 <div id="photo_right">
                     <div class="borrow">대여물품</div>
-                    <div id="table">
-                        <div id="info">
-                            <div class="time">예약 시간</div>
-                            <div class="reser_name">예약자</div>
-                        </div>
-                        <div id="data">
-                            <div class="time">시 분</div>
-                            <div class="reser_name">OOO</div>
-                        </div>
-                    </div>
+                    <table class="board_list">
+                        <caption>예약 정보</caption>
+                            <thead>
+                                <tr>
+                                    <th>예약자</th>
+                                    <th>예약시간</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="people">예약자 변수</td>
+                                    <td class="human">예약시간 변수</td>
+                                </tr>
+                            </tbody>                            
+                    </table>
                     <input type="text" name="checker" id="" placeholder="확인자 이름">
                     <button id="button">대여 하기</button>
                 </div>
