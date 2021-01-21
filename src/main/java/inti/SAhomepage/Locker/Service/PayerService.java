@@ -2,6 +2,8 @@ package inti.SAhomepage.Locker.Service;
 
 import inti.SAhomepage.Locker.Domain.Lock;
 import inti.SAhomepage.Locker.Domain.Payer;
+import inti.SAhomepage.Locker.Repository.JdbcLockerRepository;
+import inti.SAhomepage.Locker.Repository.JdbcPayerRepository;
 import inti.SAhomepage.Locker.Repository.LockerRepository;
 import inti.SAhomepage.Locker.Repository.PayerRepository;
 

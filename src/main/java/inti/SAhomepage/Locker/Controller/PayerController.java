@@ -25,8 +25,9 @@ public class PayerController {
     public String list(Model model){
         return "/locker/ControlLocker";
     }
+
     @GetMapping("locker/view")
-    public String all(Model model){
+    public String all_locker(Model model){
         List<Payer> Payers= payerService.show();
         model.addAttribute("Payers",Payers);
         return "/locker/show";

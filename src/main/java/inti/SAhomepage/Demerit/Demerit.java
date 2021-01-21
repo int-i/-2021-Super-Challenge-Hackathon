@@ -13,8 +13,6 @@ public class Demerit {
         this.num = num;
     }
 
-
-
     public int getId() {
         return id;
     }
