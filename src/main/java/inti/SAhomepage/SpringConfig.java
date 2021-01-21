@@ -62,7 +62,7 @@ public class SpringConfig {
 
     @Bean
     public RentalService rentalService() {
-        return new RentalService(productRepository(), rentalRepository(), reservationRepository());
+        return new RentalService(productRepository(), rentalRepository(), reservationRepository(), payerRepository());
     }
 
     @Bean
