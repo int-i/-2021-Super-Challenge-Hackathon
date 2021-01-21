@@ -3,6 +3,11 @@ body {
     padding: 0;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
 .nav_bar {
     width: 70%;
     height: 60px;
@@ -34,11 +39,6 @@ body {
     font-weight: bold;
     color: gray;
     padding-left: 7px;
-}
-
-.logo_word a {
-    text-decoration: none;
-    color: gray;
 }
 
 .nav_menu {
@@ -145,32 +145,51 @@ body {
     background-color: #ddd;
 }
 
-.right_dropdown {
+.dropdown5 {
     width: 138px;
     z-index: 1;
     position: absolute;
     background-color: white;
     top: 60px;
-    right: 180px;
     display: none;
-    text-align: center;
 }
 
-.right_dropdown a {
+.dropdown5 a {
     padding: 17px 55px;
     line-height: 50px;
     text-decoration: none;
     color: black;
-    font-size: 13.3333px;
-    font-weight: normal;
-    justify-content: center;
 }
 
-.nav_right:hover .right_dropdown {
+.dd5:hover .dropdown5 {
     display: block;
 }
 
-.right_dropdown a:hover {
+.dropdown5 a:hover {
+    background-color: #ddd;
+}
+
+.dropdown6 {
+    width: 138px;
+    z-index: 1;
+    position: absolute;
+    background-color: white;
+    top: 60px;
+    display: none;
+}
+
+.dropdown6 a {
+    padding: 17px 55px;
+    line-height: 50px;
+    text-decoration: none;
+    color: black;
+}
+
+.dd6:hover .dropdown6 {
+    display: block;
+}
+
+.dropdown6 a:hover {
     background-color: #ddd;
 }
 
@@ -202,6 +221,7 @@ main {
 #footer_logo {
     border-bottom: 2px solid #e4e4e4;
     display: flex;
+    margin-bottom: 25px;
 }
 
 #school_logo {
@@ -217,4 +237,15 @@ main {
 
 .rise_sns {
     font-size: 12px;
+}
+
+.fa-facebook, .fa-instagram {
+    font-size: 40px;
+    color: black;
+    position: absolute;
+    right: 9px;
+}
+
+.fa-instagram {
+    right: 60px;
 }
