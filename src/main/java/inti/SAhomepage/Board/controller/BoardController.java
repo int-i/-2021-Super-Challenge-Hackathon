@@ -105,7 +105,7 @@ public class BoardController {
         return "redirect:/board";
     }
 
-    @GetMapping("/board/download/{fileId}")
+    @GetMapping("/download/{fileId}")
     public ResponseEntity<Resource> fileDownload(@PathVariable("fileId") Long fileId) throws IOException {
         FileDto fileDto = fileService.getFile(fileId);
         Path path = Paths.get(fileDto.getFilePath());
