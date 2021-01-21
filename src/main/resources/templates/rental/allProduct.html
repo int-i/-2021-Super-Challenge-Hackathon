@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="container">
+    <div>
+        <table>
+            <tbody>
+            <tr th:each="product : ${products}">
+                <td>
+                    <img src="${product.image_path}">
+                </td>
+                <td th:text="${product.product_name}"></td>
+                <td>
+                    <td>
+                        <form th:if="${product.reserver}">
+                            <input type="submit" value="예약중" th:title="${product.reserver}" />
+                        </form>
+                        <form th:unless="${product.reserver}" action="/products/reserve?product_id=${product.product_id}" method="get">
+                            <input type="submit" value="예약"/>
+                        </form>
+                    </td>
+                    <td>
+                        <form th:if="${product.checker}">
+                            <input type="submit" value="대여중" th:title="${product.checker}"/>
+                        </form>
+                        <form th:unless="${product.checker}"action="/products/rent?product_id=${product.product_id}" method="get">
+                            <input type="submit" value="대여">
+                        </form>
+                    </td>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div> <!-- /container -->
+</body>
+</html>
