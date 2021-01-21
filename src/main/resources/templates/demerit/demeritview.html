@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.ong">
+<body>
+<div class="demerit">
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th>학우의 벌점 리스트 입니다.</th>
+            </tr>
+            </thead>
+            <tbody>
+            <p th:text="${id}+'학우의 총벌점은 '+ ${sum}+'입니다.'"></p>
+            <tr th:each="demerit : ${demerits}">
+                     <td th:text="'부여된 벌점:'+${demerit.value}"></td>
+                     <td th:text=" '벌점 사유:'+${demerit.reason}"></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+</div>
+</body>
+</html>

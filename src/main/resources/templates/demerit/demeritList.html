@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.ong">
+<body>
+<div class="demerit">
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th>벌점 목록 관리 page입니다.</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="demerit : ${demerits}">
+                <td th:text="${demerit.num}"></td>
+                <td th:text="${demerit.id}"></td>
+                <td th:text="${demerit.value}"></td>
+                <td th:text="${demerit.reason}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+</body>
+</html>
