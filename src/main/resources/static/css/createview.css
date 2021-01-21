@@ -72,9 +72,41 @@ main {
 
 .boxspace {
     margin-top: 20px;
-    height: 738px;
+    height: 600px;
     width: 70%;
     background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: gainsboro;
+}
+
+#search {
+    font-size: 32px;
+    font-family: monospace;
+    margin-bottom: 25px;
+}
+
+.demerit {
+    display: flex;
+    width: 500px;
+    height: 300px;
+    border: 3px solid black;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+#id {
+    width: 300px;
+    height: 40px;
+}
+
+#button {
+    margin-top: 50px;
+    width: 300px;
+    height: 50px;
 }
 
 .emptyspace {
