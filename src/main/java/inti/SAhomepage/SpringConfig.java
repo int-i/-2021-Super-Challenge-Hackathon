@@ -1,5 +1,7 @@
 package inti.SAhomepage;
 
+
+import inti.SAhomepage.Demerit.*;
 import inti.SAhomepage.Rental.repository.*;
 import inti.SAhomepage.Rental.service.RentalService;
 import inti.SAhomepage.Demerit.DemeritRepository;
@@ -47,7 +49,16 @@ public class SpringConfig {
     }
 
     @Bean
-    public DemeritRepository demeritRepository() {
+    public AdministratorService administratorService(){
+        return new AdministratorService(administratorRepository());
+    }
+
+    @Bean
+    public DemeritRepository demeritRepository(){
         return new MemoryDemeritRepository(dataSource);
+    }
+    @Bean
+    public AdministratorRepository administratorRepository(){
+        return new MemoryAdministratorRepository(dataSource);
     }
 }

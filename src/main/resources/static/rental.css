@@ -98,31 +98,37 @@ main {
     width: 400px;
     justify-content: space-evenly;
 }
-#table {
-    display: flex;
-    border: solid 3px;
-    border-radius: 4px;
+/* 여기부터 */
+table{
+    border-collapse: collapse;
 }
-#info{
-    display: flex;
-    width: 50%;
-    height: 50%;
-    flex-direction: column;
-    flex-grow: 1;
-}
-#data{
-    display: flex;
-    width: 50%;
-    height: 50%;
-    flex-direction: column;
-    flex-grow: 1;
+caption{
+    display: none;
 }
 
 .time,.reser_name{
     padding: 10px;
     border: solid 1px;
 }
-
+.board_list {
+    width: 100%;
+    border-top: 2px solid navy;
+}
+.board_list tr{
+    /* 카테고리 말고 내용(행 한줄)들 선택 */
+    border-bottom: 1px solid #999;
+}
+.board_list th,
+.board_list td {
+    /* 표 전체 선택 */
+    padding: 3px;
+    /* font-size: 0; */
+}
+.board_list td {
+    /* 변수들 각각 선택 */
+    text-align: center;
+}
+/* 여기까지 예약자 테이블 속성 */
 
 
 #input {
