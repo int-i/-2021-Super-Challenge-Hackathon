@@ -32,19 +32,19 @@ public class BoardController {
         this.fileService = fileService;
     }
 
-    @GetMapping("/")
+    @GetMapping("/board")
     public String list(Model model){
         List<BoardDto> boardDtoList = boardService.getBoardList();
         model.addAttribute("postList", boardDtoList);
         return "board/list.html";
     }
 
-    @GetMapping("/post")
+    @GetMapping("/board/post")
     public String post(){
         return "board/post.html";
     }
 
-    @PostMapping("/post")
+    @PostMapping("/board/post")
     public String write(@RequestParam("file") MultipartFile files, BoardDto boardDto){
         try{
             String origFilename = files.getOriginalFilename();
@@ -76,36 +76,36 @@ public class BoardController {
         }catch(Exception e){
             e.printStackTrace();
         }
-        return "redirect:/";
+        return "redirect:/board";
     }
 
-    @GetMapping("/post/{id}")
+    @GetMapping("/board/post/{id}")
     public String detail(@PathVariable("id") Long id, Model model){
         BoardDto boardDto = boardService.getPost(id);
         model.addAttribute("post", boardDto);
         return "board/detail.html";
     }
 
-    @GetMapping("/post/edit/{id}")
+    @GetMapping("/board/post/edit/{id}")
     public String edit(@PathVariable("id") Long id, Model model){
         BoardDto boardDto = boardService.getPost(id);
         model.addAttribute("post", boardDto);
         return "board/edit.html";
     }
 
-    @PutMapping("/post/edit/{id}")
+    @PutMapping("/board/post/edit/{id}")
     public String update(BoardDto boardDto) {
         boardService.savePost(boardDto);
-        return "redirect:/";
+        return "redirect:/board";
     }
 
-    @DeleteMapping("/post/{id}")
+    @DeleteMapping("/board/post/{id}")
     public String delete(@PathVariable("id") Long id){
         boardService.deletePost(id);
-        return "redirect:/";
+        return "redirect:/board";
     }
 
-    @GetMapping("/download/{fileId}")
+    @GetMapping("/board/download/{fileId}")
     public ResponseEntity<Resource> fileDownload(@PathVariable("fileId") Long fileId) throws IOException {
         FileDto fileDto = fileService.getFile(fileId);
         Path path = Paths.get(fileDto.getFilePath());
