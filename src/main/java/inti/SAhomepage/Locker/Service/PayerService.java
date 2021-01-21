@@ -29,7 +29,7 @@ public class PayerService {
                     throw new IllegalStateException("이미 과자치비를 납부하였습니다");
                 });
     }
-
+    public List<Payer> show(){return payerRepository.findAll(); }
     public void findEmptyLocker() {
         lockerRepository.findEmptyLocker();
     }

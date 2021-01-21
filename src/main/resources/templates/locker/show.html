@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.ong">
+<body>
+<div class="demerit">
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th>사물함 배정 현황입니다.</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="Payer : ${Payers}">
+                <td th:text="'학번:'+${Payer.id}"></td>
+                <td th:text=" ' 이름 :'+${Payer.name}"></td>
+                <td th:text=" ' 사물함 번호 :'+${Payer.Locker_id}"></td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

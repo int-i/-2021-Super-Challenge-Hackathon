@@ -2,6 +2,7 @@ package inti.SAhomepage.Locker.Controller;
 
 import inti.SAhomepage.Demerit.Demerit;
 import inti.SAhomepage.Demerit.DemeritForm;
+import inti.SAhomepage.Locker.Domain.Payer;
 import inti.SAhomepage.Locker.Service.PayerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,5 +25,10 @@ public class PayerController {
     public String list(Model model){
         return "/locker/ControlLocker";
     }
-
+    @GetMapping("locker/view")
+    public String all(Model model){
+        List<Payer> Payers= payerService.show();
+        model.addAttribute("Payers",Payers);
+        return "/locker/show";
+    }
 }
