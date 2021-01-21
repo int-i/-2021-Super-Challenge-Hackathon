@@ -6,7 +6,7 @@ public interface DemeritRepository {
     Demerit save(Demerit demerit);
     Optional<Demerit> findByid(int id);
     Optional<Demerit> findBynum(int num);
-    Optional<Demerit> findByFloat(Float value);
+    Optional<Demerit> findByvalue(Float value);
     Optional<Demerit> findByreason(String reason);
     List<Demerit> findAll();
 }
