@@ -6,12 +6,14 @@
     <title>RICE dd_menu1 page</title>
     <link rel="stylesheet" href="ddmenu.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="reactive.js" defer></script>
 </head>
 <body>
     <nav class="nav_bar">
         <div class="nav_left">
-            <img src="./imgs/RICE_LOGO.png" class="logo">
-            <div class="logo_word">INHA RICE</div>
+            <a href="index.html"><img src="./imgs/RICE_LOGO.png" class="logo"></a>
+            <a href="index.html"><div class="logo_word">INHA RICE</div></a>
         </div>
         <div class="nav_right">
             <button class="nav_menu dd1">메뉴
@@ -46,23 +48,26 @@
                     <a class="dropdown_menu" href="dd_menu1.html">링크<br></a>
                 </div>
             </button>
+            <button class="nav_menu dd5">메뉴
+                <div class="dropdown5">
+                    <a class="dropdown_menu" href="dd_menu1.html">링크<br></a>
+                    <a class="dropdown_menu" href="dd_menu1.html">링크<br></a>
+                    <a class="dropdown_menu" href="dd_menu1.html">링크<br></a>
+                    <a class="dropdown_menu" href="dd_menu1.html">링크<br></a>
+                </div>
+            </button>
+            <button class="nav_menu dd6">메뉴
+                <div class="dropdown6">
+                    <a class="dropdown_menu" href="dd_menu1.html">링크<br></a>
+                    <a class="dropdown_menu" href="dd_menu1.html">링크<br></a>
+                    <a class="dropdown_menu" href="dd_menu1.html">링크<br></a>
+                    <a class="dropdown_menu" href="dd_menu1.html">링크<br></a>
+                </div>
+            </button>
         </div>
-        <button class="nav_menu dd5">메뉴
-            <div class="dropdown5">
-                <a class="dropdown_menu" href="dd_menu1.html">링크<br></a>
-                <a class="dropdown_menu" href="dd_menu1.html">링크<br></a>
-                <a class="dropdown_menu" href="dd_menu1.html">링크<br></a>
-                <a class="dropdown_menu" href="dd_menu1.html">링크<br></a>
-            </div>
-        </button>
-        <button class="nav_menu dd6">메뉴
-            <div class="dropdown6">
-                <a class="dropdown_menu" href="dd_menu1.html">링크<br></a>
-                <a class="dropdown_menu" href="dd_menu1.html">링크<br></a>
-                <a class="dropdown_menu" href="dd_menu1.html">링크<br></a>
-                <a class="dropdown_menu" href="dd_menu1.html">링크<br></a>
-            </div>
-        </button>
+        <a href="#" class="navbar__toggleBtn">
+            <i class="fas fa-bars"></i>
+        </a>
     </nav>
     <main>
         <div class="boxspace"></div>
@@ -74,13 +79,17 @@
                 <a href="https://www.inha.ac.kr/"><img src="./imgs/Inha_university.jpg" id="school_logo"></a>
                 <a href="http://ice.inha.ac.kr/"><p class="student_council">인하대학교 정보통신공학과</p></a>
             </div>
-            <p class="rice_sns">
-                <a href="https://ice.inha.ac.kr/ice/2231/subview.do">
-                    <b>위치</b>: 인하대학교 하이테크관 416호  | <b>전화</b>: 032-860-7430~1
-                </a>
-                <a href="https://www.facebook.com/inhaicesa" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.instagram.com/inhaice_rice/" target="_blank"><i class="fab fa-instagram"></i></a>
-            </p>
+            <div class="footer_text">
+                <p class="rice_sns">
+                    <a href="https://ice.inha.ac.kr/ice/2231/subview.do">
+                        <b>위치</b>: 인하대학교 하이테크관 416호  | <b>전화</b>: 032-860-7430~1
+                    </a>
+                    <li class = "icons">    
+                        <a href="https://www.facebook.com/inhaicesa" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/inhaice_rice/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </li>
+                </p>
+            </div>
         </div>
     </footer>
 </body>

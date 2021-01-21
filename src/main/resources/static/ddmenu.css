@@ -9,21 +9,18 @@ a {
 }
 
 .nav_bar {
-    width: 70%;
-    height: 60px;
     display: flex;
-    justify-content: space-between;
-    padding-left: 15%;
+    justify-content: center;
     align-items: center;
 }
 
 .nav_left {
     display: flex;
-    align-items: center;
 }
 
 .nav_right {
-    padding: 19px 0;
+    display: flex;
+    list-style: none;
 }
 
 .fas {
@@ -48,6 +45,10 @@ a {
     padding: 21px 0;
     background-color: white;
 }
+.nav_menu:hover {
+    border-radius: 4px;
+    background-color: skyblue;
+}
 
 .dropdown1 {
     width: 138px;
@@ -70,7 +71,8 @@ a {
 }
 
 .dropdown1 a:hover {
-    background-color: #ddd;
+    border-radius: 4px;
+    background-color: skyblue;
 }
 
 .dropdown2 {
@@ -94,7 +96,8 @@ a {
 }
 
 .dropdown2 a:hover {
-    background-color: #ddd;
+    border-radius: 4px;
+    background-color: skyblue;
 }
 
 .dropdown3 {
@@ -118,7 +121,8 @@ a {
 }
 
 .dropdown3 a:hover {
-    background-color: #ddd;
+    border-radius: 4px;
+    background-color: skyblue;
 }
 
 .dropdown4 {
@@ -142,7 +146,8 @@ a {
 }
 
 .dropdown4 a:hover {
-    background-color: #ddd;
+    border-radius: 4px;
+    background-color: skyblue;
 }
 
 .dropdown5 {
@@ -166,7 +171,8 @@ a {
 }
 
 .dropdown5 a:hover {
-    background-color: #ddd;
+    border-radius: 4px;
+    background-color: skyblue;
 }
 
 .dropdown6 {
@@ -190,7 +196,15 @@ a {
 }
 
 .dropdown6 a:hover {
-    background-color: #ddd;
+    border-radius: 4px;
+    background-color: skyblue;
+}
+
+.navbar__toggleBtn{
+    display: none;
+    position: absolute;
+    right: 32px;
+    font-size: 24px;
 }
 
 main {
@@ -248,4 +262,51 @@ main {
 
 .fa-instagram {
     right: 60px;
+}
+
+.navbar__toggleBtn{
+    display: none;
+    position: absolute;
+    right: 32px;
+    font-size: 24px;
+}
+.nav_right.active{
+    display: flex;
+}
+
+@media screen and (max-width: 1050px){
+    .nav_bar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 24px;
+    }
+    .nav_right{
+        display:none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding-left: 0;
+    }
+    .nav_menu{
+        width: 100%;
+        text-align: center;
+    }
+    .nav_left{
+        /* display:none; */
+        justify-content: center;
+        padding-left: 0;
+        width: 100%;
+    }
+    .dropdown_menu{
+        display: none;
+    }
+    .navbar__toggleBtn{
+        display: block;
+    }
+    .nav_right.active{
+        display: flex;
+    }
+    .icons{
+        display:none;
+    }
 }
