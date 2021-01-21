@@ -155,6 +155,56 @@ body {
     text-align: center;
 }
 
+.dropdown5 {
+    width: 138px;
+    z-index: 1;
+    position: absolute;
+    background-color: white;
+    top: 60px;
+    display: none;
+}
+
+.dropdown5 a {
+    padding: 17px 55px;
+    line-height: 50px;
+    text-decoration: none;
+    color: black;
+}
+
+.dd5:hover .dropdown5 {
+    display: block;
+}
+
+.dropdown5 a:hover {
+    border-radius: 4px;
+    background-color: skyblue;
+}
+
+.dropdown6 {
+    width: 138px;
+    z-index: 1;
+    position: absolute;
+    background-color: white;
+    top: 60px;
+    display: none;
+}
+
+.dropdown6 a {
+    padding: 17px 55px;
+    line-height: 50px;
+    text-decoration: none;
+    color: black;
+}
+
+.dd6:hover .dropdown6 {
+    display: block;
+}
+
+.dropdown6 a:hover {
+    border-radius: 4px;
+    background-color: skyblue;
+}
+
 .right_dropdown a {
     padding: 17px 55px;
     line-height: 50px;
@@ -217,6 +267,22 @@ main {
 .rise_sns {
     font-size: 12px;
 }
+
+.navbar__toggleBtn{
+    display: none;
+    position: absolute;
+    right: 32px;
+    font-size: 24px;
+}
+.nav_right.active{
+    display: flex;
+}
+.footer_text{
+    display: flex;
+}
+.icons{
+    list-style: none;
+}
 @media screen and (max-width: 1024px){
     .nav_bar {
         flex-direction: column;
@@ -224,7 +290,7 @@ main {
         padding: 8px 24px;
     }
     .nav_right{
-        /* display:none; */
+        display:none;
         flex-direction: column;
         align-items: center;
         width: 100%;
