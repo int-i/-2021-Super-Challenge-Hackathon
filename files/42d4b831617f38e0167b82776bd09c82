@@ -1,0 +1,16 @@
+접속방법 
+푸티에서 3.35.54.136으로해서
+SSH-Auth-Private key file for authentication에 ppk파일 해놓고 ssh에서 open누르기
+
+
+
+자바11을 다운받고
+gradle도 다운받아야한다.
+
+-deploy.sh를 만들어야함
+git clone 저장소@master
+gradle 다운받아주고
+빌드도 해주고
+실행도 해줘야돼
+
+구글링하면 나올걸?
