@@ -31,7 +31,7 @@ public class DemeritController {
         return "demerit/demeritView";
     }
 
-    @GetMapping("demerit/all")
+    @GetMapping("demerit/manager")
     public String all_list(Model model){
         List<Demerit> demerits = demeritService.findDemerits();
         model.addAttribute("demerits",demerits);
