@@ -4,6 +4,7 @@ import java.util.Optional;
 public interface DemeritRepository {
 
     Demerit save(Demerit demerit);
+
     List<Demerit> findByid(int id);
     Optional<Float> sumByid(int id);
     List<Demerit> findAll();

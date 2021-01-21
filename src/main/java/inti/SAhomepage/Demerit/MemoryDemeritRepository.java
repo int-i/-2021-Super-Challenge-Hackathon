@@ -84,10 +84,9 @@ public class MemoryDemeritRepository implements DemeritRepository{
         try{
             conn=getConnection();
             pst=conn.prepareStatement(sql);
-            pst.setLong(1, id);
+            pst.setInt(1, id);
             rs=pst.executeQuery();
             if(rs.next()){
-
                 Float sum=rs.getFloat(1);
                 return Optional.of(sum);
             }else{

@@ -11,10 +11,10 @@
             </thead>
             <tbody>
             <tr th:each="demerit : ${demerits}">
-                <td th:text="${demerit.num}"></td>
-                <td th:text="${demerit.id}"></td>
-                <td th:text="${demerit.value}"></td>
-                <td th:text="${demerit.reason}"></td>
+                <td th:text="'벌점 부여 순서: '+${demerit.num}"></td>
+                <td th:text="' 벌점 받은 학우: '+${demerit.id}"></td>
+                <td th:text="' 벌점: '+${demerit.value}"></td>
+                <td th:text="' 벌점 사유: '+${demerit.reason}"></td>
             </tr>
             </tbody>
         </table>
