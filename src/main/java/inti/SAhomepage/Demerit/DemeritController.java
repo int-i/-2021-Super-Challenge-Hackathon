@@ -30,19 +30,25 @@ public class DemeritController {
         model.addAttribute("sum",sum.get());
         return "demerit/demeritView";
     }
-    @PostMapping("demerit/manager/insert")
+    @PostMapping("demerit/insert")
     public String manager_insert(Demerit form,Model model){
-
+        demeritService.Demerit(form);
+        List<Demerit> demerits = demeritService.findDemerits();
+        model.addAttribute("demerits",demerits);
         return "demerit/demeritList";
     }
-    @PostMapping("demerit/manager/update")
+    @PostMapping("demerit/update")
     public String manager_update(Demerit form,Model model){
-
+        demeritService.update(form);
+        List<Demerit> demerits = demeritService.findDemerits();
+        model.addAttribute("demerits",demerits);
         return "demerit/demeritList";
     }
-    @PostMapping("demerit/manager/delete")
+    @PostMapping("demerit/delete")
     public String manager_delete(Demerit form,Model model){
-
+        demeritService.delete(form);
+        List<Demerit> demerits = demeritService.findDemerits();
+        model.addAttribute("demerits",demerits);
         return "demerit/demeritList";
     }
     @GetMapping("demerit/manager")
