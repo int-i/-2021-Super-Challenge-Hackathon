@@ -3,6 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>게시판 - 목록</title>
+    <script type="text/javascript">
+        function goPage(){
+            var input = prompt("Password"+"");
+            if(input == "0808") location.href = "/board/post";
+            else {
+                alert('Wrong Password');
+                location.href = "/board";
+            }
+        }
+    </script>
     <link rel='stylesheet' href='/webjars/bootstrap/4.5.0/css/bootstrap.min.css'>
     <link href="../static/css/createview.css" th:href="@{/css/createview.css}" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
@@ -54,15 +64,14 @@
             <td>
                 <span th:text="${#temporals.format(post.createdDate, 'yyyy-MM-dd HH:mm')}"></span>
             </td>
+            <td>
+                <a th:href="@{'/board/post/' + ${post.id}}">  </a>
+            </td>
         </tr>
         </tbody>
     </table>
-    <div class="row">
-        <div class="col-auto mr-auto"></div>
-        <div class="col-auto">
-            <a class="btn btn-primary" th:href="@{/board/post}" role="button">글쓰기</a>
-        </div>
-    </div>
+    <a style="font-weight:bold; font-size:20px;text-align:center; background-color:skyblue; border-radius: 30%;
+              position:relative;left:85%; width:40px;height:40px; "            href="javascript:goPage()" >글쓰기</a><br/>
 </div>
 <script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
 <script src="/webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
