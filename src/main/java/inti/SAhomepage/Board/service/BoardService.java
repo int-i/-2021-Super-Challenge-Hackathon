@@ -41,7 +41,7 @@ public class BoardService {
     }
 
     @Transactional
-    public BoardDto getPost(Long id){
+    public BoardDto getPost(Long id) {
         Board board = boardRepository.findById(id).get();
 
         BoardDto boardDto = BoardDto.builder()

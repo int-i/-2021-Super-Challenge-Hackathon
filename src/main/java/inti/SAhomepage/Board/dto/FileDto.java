@@ -3,6 +3,7 @@ package inti.SAhomepage.Board.dto;
 import inti.SAhomepage.Board.domain.entity.File;
 import lombok.*;
 
+
 @Getter
 @Setter
 @ToString
@@ -13,7 +14,7 @@ public class FileDto {
     private String filename;
     private String filePath;
 
-    public File toEntity(){
+    public File toEntity() {
         File build = File.builder()
                 .id(id)
                 .origFilename(origFilename)

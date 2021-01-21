@@ -14,16 +14,17 @@ import java.time.LocalDateTime;
 @Getter
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@EntityListeners(AuditingEntityListener.class) // JPA에게 해당 Entity는 Audit
+@EntityListeners(AuditingEntityListener.class) /* JPA에게 해당 Entity는 Auditiong 기능을 사용함을 알립니다. */
 public class Board {
+
     @Id
     @GeneratedValue
     private Long id;
 
-    @Column(length=10, nullable = false)
+    @Column(length = 10, nullable = false)
     private String author;
 
-    @Column(length=100,nullable = false)
+    @Column(length = 100, nullable = false)
     private String title;
 
     @Column(columnDefinition = "TEXT", nullable = false)
@@ -40,12 +41,11 @@ public class Board {
     private LocalDateTime modifiedDate;
 
     @Builder
-    public Board(Long id, String author, String title, String content, Long fileId){
+    public Board(Long id, String author, String title, String content, Long fileId) {
         this.id = id;
         this.author = author;
         this.title = title;
         this.content = content;
         this.fileId = fileId;
     }
-
 }

@@ -15,10 +15,11 @@ public class BoardDto {
     private String title;
     private String content;
     private Long fileId;
+    //private String origFilename;
     private LocalDateTime createdDate;
     private LocalDateTime modifiedDate;
 
-    public Board toEntity(){
+    public Board toEntity() {
         Board build = Board.builder()
                 .id(id)
                 .author(author)
@@ -30,7 +31,7 @@ public class BoardDto {
     }
 
     @Builder
-    public BoardDto(Long id, String author, String title, String content, Long fileId, LocalDateTime createdDate, LocalDateTime modifiedDate){
+    public BoardDto(Long id, String author, String title, String content, Long fileId, LocalDateTime createdDate, LocalDateTime modifiedDate) {
         this.id = id;
         this.author = author;
         this.title = title;

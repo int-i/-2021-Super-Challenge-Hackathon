@@ -11,12 +11,12 @@ import javax.transaction.Transactional;
 public class FileService {
     private FileRepository fileRepository;
 
-    public FileService(FileRepository fileRepository){
+    public FileService(FileRepository fileRepository) {
         this.fileRepository = fileRepository;
     }
 
     @Transactional
-    public Long saveFile(FileDto fileDto){
+    public Long saveFile(FileDto fileDto) {
         return fileRepository.save(fileDto.toEntity()).getId();
     }
 
