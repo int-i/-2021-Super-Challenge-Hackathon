@@ -4,6 +4,10 @@ body {
     overflow-x: hidden;
 }
 
+li {
+    list-style: none;
+}
+
 a {
     text-decoration: none;
     color: black;
@@ -17,6 +21,7 @@ a {
 
 .nav_left {
     display: flex;
+    align-items: center;
 }
 
 .nav_right {
@@ -47,156 +52,6 @@ a {
     background-color: white;
 }
 .nav_menu:hover {
-    border-radius: 4px;
-    background-color: skyblue;
-}
-
-.dropdown1 {
-    width: 138px;
-    z-index: 1;
-    position: absolute;
-    background-color: white;
-    top: 60px;
-    display: none;
-}
-
-.dropdown1 a {
-    padding: 17px 55px;
-    line-height: 50px;
-    text-decoration: none;
-    color: black;
-}
-
-.dd1:hover .dropdown1 {
-    display: block;
-}
-
-.dropdown1 a:hover {
-    border-radius: 4px;
-    background-color: skyblue;
-}
-
-.dropdown2 {
-    width: 138px;
-    z-index: 1;
-    position: absolute;
-    background-color: white;
-    top: 60px;
-    display: none;
-}
-
-.dropdown2 a {
-    padding: 17px 55px;
-    line-height: 50px;
-    text-decoration: none;
-    color: black;
-}
-
-.dd2:hover .dropdown2 {
-    display: block;
-}
-
-.dropdown2 a:hover {
-    border-radius: 4px;
-    background-color: skyblue;
-}
-
-.dropdown3 {
-    width: 138px;
-    z-index: 1;
-    position: absolute;
-    background-color: white;
-    top: 60px;
-    display: none;
-}
-
-.dropdown3 a {
-    padding: 17px 55px;
-    line-height: 50px;
-    text-decoration: none;
-    color: black;
-}
-
-.dd3:hover .dropdown3 {
-    display: block;
-}
-
-.dropdown3 a:hover {
-    border-radius: 4px;
-    background-color: skyblue;
-}
-
-.dropdown4 {
-    width: 138px;
-    z-index: 1;
-    position: absolute;
-    background-color: white;
-    top: 60px;
-    display: none;
-}
-
-.dropdown4 a {
-    padding: 17px 55px;
-    line-height: 50px;
-    text-decoration: none;
-    color: black;
-}
-
-.dd4:hover .dropdown4 {
-    display: block;
-}
-
-.dropdown4 a:hover {
-    border-radius: 4px;
-    background-color: skyblue;
-}
-
-.dropdown5 {
-    width: 138px;
-    z-index: 1;
-    position: absolute;
-    background-color: white;
-    top: 60px;
-    display: none;
-}
-
-.dropdown5 a {
-    padding: 17px 55px;
-    line-height: 50px;
-    text-decoration: none;
-    color: black;
-}
-
-.dd5:hover .dropdown5 {
-    display: block;
-}
-
-.dropdown5 a:hover {
-    border-radius: 4px;
-    background-color: skyblue;
-}
-
-.dropdown6 {
-    width: 138px;
-    z-index: 1;
-    position: absolute;
-    background-color: white;
-    top: 60px;
-    display: none;
-}
-
-.dropdown6 a {
-    padding: 17px 55px;
-    line-height: 50px;
-    text-decoration: none;
-    color: black;
-}
-
-.dd6:hover .dropdown6 {
-    display: block;
-}
-
-.dropdown6 a:hover {
     border-radius: 4px;
     background-color: skyblue;
 }

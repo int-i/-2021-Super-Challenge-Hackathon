@@ -1,7 +1,5 @@
 let cnt = 0;
 
-
-
 $(function(){
     $('.circle1').on('click',function(){
         cnt = 1;
