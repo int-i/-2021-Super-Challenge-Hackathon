@@ -15,7 +15,7 @@ public class BoardDto {
     private String title;
     private String content;
     private Long fileId;
-    //private String origFilename;
+    private String fname;
     private LocalDateTime createdDate;
     private LocalDateTime modifiedDate;
 
@@ -26,17 +26,19 @@ public class BoardDto {
                 .title(title)
                 .content(content)
                 .fileId(fileId)
+                .fname(fname)
                 .build();
         return build;
     }
 
     @Builder
-    public BoardDto(Long id, String author, String title, String content, Long fileId, LocalDateTime createdDate, LocalDateTime modifiedDate) {
+    public BoardDto(Long id, String author, String title, String content, Long fileId, String fname, LocalDateTime createdDate, LocalDateTime modifiedDate) {
         this.id = id;
         this.author = author;
         this.title = title;
         this.content = content;
         this.fileId = fileId;
+        this.fname = fname;
         this.createdDate = createdDate;
         this.modifiedDate = modifiedDate;
     }

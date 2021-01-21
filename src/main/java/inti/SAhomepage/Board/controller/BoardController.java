@@ -71,6 +71,7 @@ public class BoardController {
 
             Long fileId = fileService.saveFile(fileDto);
             boardDto.setFileId(fileId);
+            boardDto.setFname(origFilename);
             boardService.savePost(boardDto);
         }catch(Exception e){
             e.printStackTrace();

@@ -17,7 +17,7 @@
             <p class="card-text" th:text="${post.content}"></p>
             <div th:if="${post.fileId != null}">
                 <strong>첨부파일 : </strong>
-                <a class="card-text" th:href="@{'/download/' + ${post.fileId}}" th:text="${filename}"></a>
+                <a class="card-text" th:href="@{'/download/' + ${post.fileId}}" th:text="${post.fname}"></a>
             </div>
         </div>
     </div>

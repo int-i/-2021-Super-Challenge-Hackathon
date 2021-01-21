@@ -9,14 +9,14 @@ import lombok.*;
 @ToString
 @NoArgsConstructor
 public class FileDto {
-    private Long id;
+    private Long fid;
     private String origFilename;
     private String filename;
     private String filePath;
 
     public File toEntity() {
         File build = File.builder()
-                .id(id)
+                .fid(fid)
                 .origFilename(origFilename)
                 .filename(filename)
                 .filePath(filePath)
@@ -25,8 +25,8 @@ public class FileDto {
     }
 
     @Builder
-    public FileDto(Long id, String origFilename, String filename, String filePath) {
-        this.id = id;
+    public FileDto(Long fid, String origFilename, String filename, String filePath) {
+        this.fid = fid;
         this.origFilename = origFilename;
         this.filename = filename;
         this.filePath = filePath;
