@@ -48,6 +48,7 @@ a {
     background-color: white;
 }
 .nav_menu:hover {
+    border-radius: 4px;
     background-color: skyblue;
 }
 
@@ -72,6 +73,7 @@ a {
 }
 
 .dropdown1 a:hover {
+    border-radius: 4px;
     background-color: skyblue;
 }
 
@@ -96,6 +98,7 @@ a {
 }
 
 .dropdown2 a:hover {
+    border-radius: 4px;
     background-color: skyblue;
 }
 
@@ -120,6 +123,7 @@ a {
 }
 
 .dropdown3 a:hover {
+    border-radius: 4px;
     background-color: skyblue;
 }
 
@@ -144,6 +148,7 @@ a {
 }
 
 .dropdown4 a:hover {
+    border-radius: 4px;
     background-color: skyblue;
 }
 
@@ -168,6 +173,7 @@ a {
 }
 
 .dropdown5 a:hover {
+    border-radius: 4px;
     background-color: skyblue;
 }
 
@@ -192,6 +198,7 @@ a {
 }
 
 .dropdown6 a:hover {
+    border-radius: 4px;
     background-color: skyblue;
 }
 
