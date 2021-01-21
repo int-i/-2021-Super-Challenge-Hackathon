@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.ong">
+<body>
+<div class="lock">
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th>사물함 관리 page입니다.</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <form action="./insert" method="post">
+        <div class="from-insert">
+            <label for="Locker_id">사물함번호</label>
+            <input type="number" id="Locker_id" name="Locker_id" placeholder="사물함 번호를 입력해주세요">
+            <label for="No_user">학번</label>
+            <input type="number" id="No_user" name="No_user" placeholder="학번을 입력해주세요">
+        </div>
+        <button type="submit">삽입</button>
+    </form>
+    <form action="./update" method="post">
+        <div class="from-update">
+            <label for="Locker_id">사물함번호</label>
+            <input type="number" id="Locker_id2" name="Locker_id" placeholder="사물함 번호를 입력해주세요">
+            <label for="No_user">학번</label>
+            <input type="number" id="No_user2" name="No_user" placeholder="학번을 입력해주세요">
+        </div>
+        <button type="submit">수정</button>
+    </form>
+    <form action="./delete" method="post">
+        <div class="from-delete">
+            <label for="Locker_id">사물함번호</label>
+            <input type="number" id="Locker_id3" name="Locker_id" placeholder="사물함 번호를 입력해주세요">
+        </div>
+        <button type="submit">삭제</button>
+    </form>
+</div>
+</body>
+</html>
