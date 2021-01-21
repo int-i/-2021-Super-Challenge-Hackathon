@@ -94,7 +94,7 @@ public class BoardController {
     }
 
     @PutMapping("/post/edit/{id}")
-    public String update(BoardDto boardDto){
+    public String update(BoardDto boardDto) {
         boardService.savePost(boardDto);
         return "redirect:/";
     }
