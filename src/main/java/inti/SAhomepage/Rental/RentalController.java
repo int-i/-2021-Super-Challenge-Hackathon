@@ -29,14 +29,14 @@ public class RentalController {
         List<Product> products = rentalService.findProducts();
         model.addAttribute("products", products);
         model.addAttribute("pay", false);
-        return "rental/allProduct";
+        return "/rental/allProduct";
     }
 
     @GetMapping("/products/{product_id}/reserve")
     public String reservationForm(Model model, @PathVariable int product_id) {
         Product product = rentalService.findOneProduct(product_id).get();
         model.addAttribute("product", product);
-        return "rental/reservation_page";
+        return "/rental/reservation_page";
     }
 
     @PostMapping("/products/{product_id}/reserve")
@@ -56,7 +56,7 @@ public class RentalController {
             List<Product> products = rentalService.findProducts();
             model.addAttribute("products", products);
             model.addAttribute("pay", true);
-            return "rental/allProduct";
+            return "/rental/allProduct";
         }
     }
 
@@ -69,7 +69,7 @@ public class RentalController {
         }
         model.addAttribute("product", product);
         model.addAttribute("reservation", reservation);
-        return "rental/rental";
+        return "/rental/rental";
     }
 
     @PostMapping("/products/{product_id}/rent")
@@ -85,7 +85,7 @@ public class RentalController {
             List<Product> products = rentalService.findProducts();
             model.addAttribute("products", products);
             model.addAttribute("pay", true);
-            return "rental/allProduct";
+            return "/rental/allProduct";
         }
     }
 
